@@ -141,20 +141,6 @@ public class BlockAlchemicalSmelter extends BlockContainer {
         else return Item.getItemFromBlock(Blocks.AIR);
     }
 
-    public int damageDropped(IBlockState state) {
-        int metadata = getMetaFromState(state);
-        if (metadata == 1 || metadata == 4) {
-            return 3;
-        }
-        if (metadata == 3) {
-            return 9;
-        }
-        if (metadata == 2) {
-            return 1;
-        }
-        return 0;
-    }
-
     public TileEntity createTileEntity(World world, IBlockState state) {
         int metadata = getMetaFromState(state);
         if (metadata == 0) {

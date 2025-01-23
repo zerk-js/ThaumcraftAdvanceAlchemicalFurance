@@ -12,7 +12,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'com.wynprice.cursemaven'
 
-version = "1.1.0"
+version = "1.2.0"
 group = "com.keletu.advanced_smelter"
 archivesBaseName = "Advanced Essentia Smelter"
 
@@ -50,7 +50,7 @@ dependencies {
     deobfCompile "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.8.470"
     deobfCompile 'curse.maven:thaumcraft-223628:2629023'
     deobfCompile 'curse.maven:baubles-227083:2518667'
-    deobfCompile 'curse.maven:thaumic-augmentation-319441:4486505'
+    deobfCompile 'curse.maven:thaumic-augmentation-319441:6047659'
 }
 
 processResources {

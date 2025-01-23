@@ -8,7 +8,6 @@ import net.minecraft.client.renderer.BlockRendererDispatcher;
 import net.minecraft.client.renderer.block.model.IBakedModel;
 import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
-import net.minecraft.init.Blocks;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -77,29 +76,6 @@ extends TileEntitySpecialRenderer<TileAlchemicalSmelterAdvanced> {
                 //GL11.glTranslatef(0.0f, 0.0f, 0.01f);
                 //this.renderQuadFromIcon(BlocksTC.fluxGoo.getDefaultState(), 190, f);
                 //GL11.glPopMatrix();
-                GL11.glPopMatrix();
-            }
-            GL11.glPopMatrix();
-        }
-        if (tile.heat > 100) {
-            GL11.glPushMatrix();
-            GL11.glTranslatef(0.0f, 0.0f, 1.0f);
-            for (a = 0; a < 4; ++a) {
-                GL11.glPushMatrix();
-                GL11.glRotatef((float)(90 * a), 0.0f, 0.0f, 1.0f);
-                GL11.glRotatef(135.0f, 1.0f, 0.0f, 0.0f);
-                GL11.glRotatef(180.0f, 0.0f, 0.0f, 1.0f);
-                GL11.glTranslatef(-0.5f, 0.0f, -1.0f);
-                GL11.glPushMatrix();
-                //GL11.glRotatef(180.0f, 1.0f, 0.0f, 0.0f);
-                GL11.glRotatef(180.0f, 1.0f, 0.0f, 0.0f);
-                GL11.glTranslated(0, -1, -0.1);
-                GL11.glScaled(1, Math.min(1.0f, (float)tile.heat / (float)tile.maxPower) * 0.85, 0.1);
-                this.renderQuadFromIcon(Blocks.FIRE.getDefaultState());
-                GL11.glPopMatrix();
-                GL11.glTranslatef(0.1f, 0.0f, 0.05f);
-                GL11.glScaled(0.8, 1, 0.1);
-                this.renderQuadFromIcon(BlocksTC.stoneArcane.getDefaultState());
                 GL11.glPopMatrix();
             }
             GL11.glPopMatrix();

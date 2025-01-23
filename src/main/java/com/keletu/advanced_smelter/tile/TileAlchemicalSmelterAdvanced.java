@@ -41,7 +41,7 @@ extends TileThaumcraft implements ITickable {
     public int vis;
     public int maxVis = AdvancedEssentiaSmelterMod.AAFConfig.MAXIMUM;
     public int power1 = 0;
-    public int maxPower = 500;
+    public int maxPower = AdvancedEssentiaSmelterMod.AAFConfig.MAXIMUM;
     public int heat = 0;
     public boolean destroy = false;
     int count = 0;
@@ -125,6 +125,10 @@ extends TileThaumcraft implements ITickable {
                     this.heat += AuraHelper.drainVis(getWorld(), getPos(), 0.5f, false) * 20;
                 }
                 if (this.power1 <= this.maxPower && ticks++ % 10 == 0) {
+                    if (ticks % 20 == 0) {
+                        NodeHelper.validate(node, world);
+                    }
+
                     ConsumeResult result = node.consume(1, false);
                     if (result.energyConsumed == 1) {
                         this.power1 += result.energyConsumed * AdvancedEssentiaSmelterMod.AAFConfig.EFFICIENCY;
