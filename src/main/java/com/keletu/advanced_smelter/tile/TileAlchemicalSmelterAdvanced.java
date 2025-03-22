@@ -120,10 +120,12 @@ extends TileThaumcraft implements ITickable {
                 --this.processed;
             }
             if (this.count % 5 == 0) {
-                int pt = this.heat--;
+                //int pt = this.heat--;
+                int pt = this.heat;
                 if (this.heat <= this.maxPower) {
-                    this.heat += AuraHelper.drainVis(getWorld(), getPos(), 0.5f, false) * 20;
-                }
+                    //this.heat += AuraHelper.drainVis(getWorld(), getPos(), 0.5f, false) * 20;
+                    this.heat += AuraHelper.drainVis(getWorld(), getPos(), 0.5f, false) * 80;
+                    }
                 if (this.power1 <= this.maxPower && ticks++ % 10 == 0) {
                     if (ticks % 20 == 0) {
                         NodeHelper.validate(node, world);
